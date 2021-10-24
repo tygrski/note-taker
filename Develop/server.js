@@ -34,8 +34,32 @@ app.get("/api/notes", function(req, res){
   })
 });
 
+// Create Note
+app.post("/api/notes", function(req, res){
+  let randomLetter = String.fromCharCode (65 + Math.floor(Math.random() * 26)); 
+  let id = randomLetter + Date.now();
+  let newNote = {
+    id: id,
+    title: req.body.title,
+    text: req.body.text
+  };
+  notes.push(newNote);
+  const stringifyNote = JSON.stringify(notes);
+  res.json(notes);
+  fs.writeFile("db/db.json", stringifyNote, (err) => {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      console.log("Note was saved to db.json!")
+    }
+  });
+});
+
+
 // start server
 app.listen(PORT, () => {
   console.log (`App istening at PORT ${PORT}`);
 });
+
 
