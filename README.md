@@ -1,6 +1,6 @@
 # Note Taker App
 
-## Note Taker App allows users to add notes, save notes, review notes and delete notes.
+## Note Taker App allows users to add notes to a list, save notes, review saved notes and delete notes.
 
 ## User instructions
 -to use app, in terminal run npm install express, npm install fs, npm install path, npm install, npm init.<br>
