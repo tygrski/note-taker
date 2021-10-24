@@ -12,4 +12,4 @@
     ✔-Express.js
 
 ## Work performed :<br>
-    ✔- Added API routes to the HTML file, add notes from the body request, acccesss saved notes and to delete notes. 
+    ✔- Added API routes to the HTML file, add notes from the body request, accesss saved notes and to delete notes. 
