@@ -3,6 +3,8 @@
 // open http://localhost:3001/notes in browser
 
 const express = require('express');
+// const apiRoutes = require('/routes/apiRoutes');
+// const htmlRoutes = require('./routes/htmlRoutes');
 const path = require("path");
 const fs = require("fs");
 let app = express();
@@ -23,12 +25,6 @@ app.get("/notes", function (req, res){
   res.sendFile(path.join(__dirname, "public/notes.html"))
 });
 
-
-// start server
-app.listen(PORT, () => {
-  console.log (`App istening at PORT ${PORT}`);
-});
-
 // Display Notes
 app.get("/api/notes", function(req, res){
   fs.readFile("db/db.json", "utf8", function(err, data){
@@ -38,6 +34,11 @@ app.get("/api/notes", function(req, res){
     }
     res.json(notes);
   })
+});
+
+// start server
+app.listen(PORT, () => {
+  console.log (`App istening at PORT ${PORT}`);
 });
 
 // Create Note
@@ -62,7 +63,6 @@ app.post("/api/notes", function(req, res){
   });
 });
 
-
 // Delete Note
 app.delete("/api/notes/:id", function (req, res) {
   
@@ -85,5 +85,9 @@ app.delete("/api/notes/:id", function (req, res) {
   });
 });
 
+// Catch all error route
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
 
 
