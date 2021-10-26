@@ -1,7 +1,16 @@
-# Note Taker 
+# Note Taker App
+
+## Note Taker App allows users to add notes to a list, save notes, review saved notes and delete notes.
+
+## Heroku link: https://dashboard.heroku.com/apps/polar-taiga-27453
 
 ## User instructions
--to use app, in terminal run npm install express, npm install fs, npm install path, npm install, npm init.<br>
--then in terminal run node server.js, and node server.js each time you want run the app after the prior installs.<br>
+-then in terminal run node server.js.<br>
 -open http://localhost:3001/notes in browser.<br>
--use ctrl + c to close in terminal.
+-use ctrl + c to close the server in terminal when finished using the app.
+
+## Created With :<br>
+    ✔-Express.js
+
+## Work performed :<br>
+    ✔- Added API routes to the HTML file, add notes from the body request, accesss saved notes and to delete notes. 
