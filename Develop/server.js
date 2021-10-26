@@ -10,7 +10,7 @@ const fs = require("fs");
 let app = express();
 let notes = require("./db/db.json");
 
-const PORT = process.envPORT || 3001; 
+const PORT = process.env.PORT || 3001; 
 
 // tells if initializing express, we can with json
 app.use(express.json());
@@ -51,7 +51,10 @@ app.post("/api/notes", function(req, res){
     text: req.body.text
   };
   notes.push(newNote);
+  // needs to stringgift note for brower to read
   const stringifyNote = JSON.stringify(notes);
+  
+  // push notes to browser
   res.json(notes);
   fs.writeFile("db/db.json", stringifyNote, (err) => {
     if (err) {
